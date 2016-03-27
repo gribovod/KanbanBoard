@@ -76,5 +76,6 @@ public class Kanban {
         this.state = State.PENDING;
         this.name = text;
         this.text = text;
+        this.deleteMark = false;
     }
 }
