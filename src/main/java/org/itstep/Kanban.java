@@ -12,6 +12,14 @@ public class Kanban {
     private String text;
     private String name; 
     private Boolean deleteMark;
+    private User user;
+    
+    public User getUser() {
+        return user;
+    }
+    public void setUser(User user) {
+        this.user = user;
+    }
 
     public static Integer getIdCouner() {
         return idCouner;
@@ -61,6 +69,16 @@ public class Kanban {
         this.id = id;
     }
 
+    public Kanban(String name, String text, String userName) {
+        this.id = idCouner;
+        this.idCouner++;
+        this.state = State.PENDING;
+        this.name = name;
+        this.text = text;
+        this.deleteMark = false;
+        this.user = new User(userName);
+        
+    }
     public Kanban(String name, String text) {
         this.id = idCouner;
         this.idCouner++;
@@ -68,6 +86,7 @@ public class Kanban {
         this.name = name;
         this.text = text;
         this.deleteMark = false;
+        this.user = new User("NoName");
     }
 
         public Kanban(String text) {
@@ -77,5 +96,6 @@ public class Kanban {
         this.name = text;
         this.text = text;
         this.deleteMark = false;
+        this.user = new User("NoName");
     }
 }

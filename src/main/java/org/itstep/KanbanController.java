@@ -26,6 +26,14 @@ public class KanbanController {
         kanbanList.add(kanban);
         return kanban;
     }
+    
+    @RequestMapping("/kanban/new/{text}/{name}/{userName}")
+        public Kanban newKanban (@PathVariable("name") String name, @PathVariable("text") String text, @PathVariable("userName") String userName){
+        Kanban kanban = new Kanban(name, text, userName);
+        kanbanList.add(kanban);
+        return kanban;
+    }
+    
     @RequestMapping("/kanban")
     public ArrayList getKanbanList (){
          return kanbanList;
